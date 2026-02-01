@@ -23,7 +23,41 @@ Special emphasis is placed on scenario analysis for extreme events, using histor
 
 
 ## Project Structure
-TBD
+
+```text
+project/
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── external/
+│
+├── notebooks/
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_cleaning_preprocessing.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_feature_engineering.ipynb
+│   ├── 05_modeling.ipynb
+│   └── 06_validation_scenarios.ipynb
+│
+├── src/
+│   ├── ingestion/
+│   ├── cleaning/
+│   ├── features/
+│   ├── modeling/
+│   └── utils/
+│
+├── dashboards/
+│
+├── reports/
+│   ├── proposal.pdf
+│   ├── eda_report.pdf
+│   └── final_report.pdf
+│
+├── requirements.txt
+│
+└── README.md
+```
 
 
 ## Team Members
