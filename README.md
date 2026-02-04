@@ -31,6 +31,14 @@ Special emphasis is placed on scenario analysis for extreme events, using histor
 - **Storage:** Unity Catalog Volume (Databricks)
 - **Path:** `dbfs:/Volumes/workspace/default/dbfs/Projects/Capstone/data/bronze/bikeshare_ridership`
 
+### GBFS Real-Time Data (US06)
+
+- **Source:** Bike Share Toronto GBFS (real-time feeds)
+- **Endpoints:** station_information, station_status
+- **Access mode:** On-demand (no data persistence)
+- **Format:** JSON parsed into Spark DataFrames
+- **Usage:** Live querying, validation, and exploratory analysis
+- **Output:** Spark DataFrames enriched with retrieval timestamp and source metadata
 
 ## Project Structure
 
