@@ -1,0 +1,16 @@
+# Core environment
+python>=3.11
+
+# Data processing (Databricks runtime provides Spark)
+pyspark
+
+# Data analysis
+pandas
+numpy
+
+# Visualization (used in EDA / dashboards)
+matplotlib
+seaborn
+
+# Machine learning
+scikit-learn

@@ -21,6 +21,24 @@ Special emphasis is placed on scenario analysis for extreme events, using histor
 - Scenario-based insights for events like FIFA World Cup 2026
 - Interactive dashboards highlighting high-risk stations and periods
 
+## Data Sources & Ingestion
+
+### Bike Share – Bronze Dataset
+- **Time window:** October 2022 – September 2024 (24 months)
+- **Total records:** 12,055,519
+- **Format:** Parquet
+- **Partitioning:** year / month
+- **Storage:** Unity Catalog Volume (Databricks)
+- **Path:** `dbfs:/Volumes/workspace/default/dbfs/Projects/Capstone/data/bronze/bikeshare_ridership`
+
+### GBFS Real-Time Data (US06)
+
+- **Source:** Bike Share Toronto GBFS (real-time feeds)
+- **Endpoints:** station_information, station_status
+- **Access mode:** On-demand (no data persistence)
+- **Format:** JSON parsed into Spark DataFrames
+- **Usage:** Live querying, validation, and exploratory analysis
+- **Output:** Spark DataFrames enriched with retrieval timestamp and source metadata
 
 ## Project Structure
 
@@ -31,14 +49,6 @@ project/
 │   ├── raw/
 │   ├── processed/
 │   └── external/
-│
-├── notebooks/
-│   ├── 01_data_ingestion.ipynb
-│   ├── 02_cleaning_preprocessing.ipynb
-│   ├── 03_eda.ipynb
-│   ├── 04_feature_engineering.ipynb
-│   ├── 05_modeling.ipynb
-│   └── 06_validation_scenarios.ipynb
 │
 ├── src/
 │   ├── ingestion/
@@ -56,7 +66,10 @@ project/
 │
 ├── requirements.txt
 │
-└── README.md
+├── README.md
+│
+└── CONTRIBUTING.md
+
 ```
 
 
