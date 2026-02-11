@@ -52,7 +52,7 @@ project/
 │
 ├── src/
 │   ├── ingestion/
-│   ├── cleaning/
+│   ├── preprocessing/
 │   ├── features/
 │   ├── modeling/
 │   └── utils/
@@ -71,6 +71,15 @@ project/
 └── CONTRIBUTING.md
 
 ```
+
+## Data Pipeline Architecture
+Raw (CSV / ZIP)
+        ↓
+Bronze (Parquet)
+        ↓
+Silver (Clean + Hourly)
+        ↓
+Gold (Integrated Dataset)
 
 
 ## Team Members
