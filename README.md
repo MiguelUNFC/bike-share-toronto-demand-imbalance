@@ -40,6 +40,37 @@ Special emphasis is placed on scenario analysis for extreme events, using histor
 - **Usage:** Live querying, validation, and exploratory analysis
 - **Output:** Spark DataFrames enriched with retrieval timestamp and source metadata
 
+### Bike Share – Silver Dataset (US09)
+
+- **Source:** Bronze Bike Share Trips
+- **Processing scope:**
+  - Standardized column names (snake_case)
+  - Cleaned null and invalid records
+  - Converted timestamps to structured date fields
+  - Generated temporal features (day, hour buckets)
+  - Filtered duration outliers (≤ 4 hours)
+- **Granularity:** Trip-level
+- **Format:** Parquet
+- **Partitioning:** year / month
+- **Path:** `dbfs:/Volumes/workspace/default/dbfs/Projects/Capstone/data/silver/bikeshare_trips`
+
+### Bike Share – Silver Aggregated Dataset (Station Hour Flow)
+
+- **Source:** Silver Bike Share Trips
+- **Aggregation level:** Station – Hour
+- **Processing scope:**
+  - Calculated hourly departures and arrivals per station
+  - Generated net_flow metric (arrivals – departures)
+  - Created hourly time buckets
+  - Data quality validation on key fields
+- **Granularity:** station_id × year × month × day × hour
+- **Format:** Parquet
+- **Partitioning:** year / month
+- **Path:** `dbfs:/Volumes/workspace/default/dbfs/Projects/Capstone/data/silver_agg/station_hour_flow`
+
+**Usage:**
+Feature base for demand prediction and station imbalance modeling.
+
 ## Project Structure
 
 ```text
@@ -51,6 +82,7 @@ project/
 │   └── external/
 │
 ├── src/
+│   ├── aggregation/
 │   ├── ingestion/
 │   ├── preprocessing/
 │   ├── features/
@@ -73,11 +105,14 @@ project/
 ```
 
 ## Data Pipeline Architecture
+
 Raw (CSV / ZIP)
         ↓
-Bronze (Parquet)
+Bronze (Trip-level Parquet)
         ↓
-Silver (Clean + Hourly)
+Silver (Clean Trips)
+        ↓
+Silver_Agg (Station Hour Flow)
         ↓
 Gold (Integrated Dataset)
 
