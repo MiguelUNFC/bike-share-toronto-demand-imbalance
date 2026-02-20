@@ -116,6 +116,60 @@ Silver_Agg (Station Hour Flow)
         ↓
 Gold (Integrated Dataset)
 
+## SILVER → GOLD Integration Layer
+
+The integration layer consolidates all SILVER datasets into analytically ready GOLD datasets at **station-hour granularity**, which serves as the modeling backbone for station imbalance prediction.
+
+### Objective
+
+To integrate:
+
+- Station-hour flow data (departures, arrivals, net_flow)
+- Hourly weather data
+- Station geolocation (lat/lon)
+- Large-scale public event data (daily and spatiotemporal)
+
+while preserving strict uniqueness at:
+
+`station_id × year × month × day × hour`
+
+---
+
+### GOLD Datasets
+
+#### GOLD_V1 – Daily Event Integration (Baseline)
+
+Includes:
+- Flow variables
+- Weather variables
+- Station metadata
+- Daily event indicators
+
+Use case:  
+Baseline modeling using calendar-level event effects.
+
+---
+
+#### GOLD_V2 – Spatiotemporal Event Integration (Enhanced)
+
+Extends GOLD_V1 by incorporating:
+
+- Event-hour filtering (only during active event hours)
+- Spatial filtering using Haversine distance
+- Nearby event indicators
+- Event attendance aggregation per station-hour
+- Distance-weighted event intensity
+- Operational event impact categories
+
+Use case:  
+Advanced imbalance prediction under localized demand shocks (e.g., FIFA World Cup 2026 scenarios).
+
+---
+
+### Recommended Dataset for Modeling
+
+**GOLD_V2** should be used for predictive modeling, as it captures temporal, weather, spatial, and event intensity effects in a unified dataset.
+
 
 ## Team Members
 - Jesus Ricardo Vizcarra Vargas
