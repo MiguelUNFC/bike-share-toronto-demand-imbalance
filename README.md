@@ -165,7 +165,20 @@ Use case:
 Advanced imbalance prediction under localized demand shocks (e.g., FIFA World Cup 2026 scenarios).
 
 ---
+## Exploratory Data Analysis
 
+The full exploratory data analysis for the Bike Share Toronto demand imbalance project can be found in:
+
+`reports/eda/EDA.ipynb`
+
+This notebook explores:
+- Trip-level system behavior
+- Station-hour operational flows
+- Station imbalance patterns
+- Extreme imbalance scenarios
+- Weather impact on system dynamics
+- Public event impact on system dynamics
+---
 ### Recommended Dataset for Modeling
 
 **GOLD_V2** should be used for predictive modeling, as it captures temporal, weather, spatial, and event intensity effects in a unified dataset.
