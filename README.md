@@ -183,6 +183,19 @@ This notebook explores:
 
 **GOLD_V2** should be used for predictive modeling, as it captures temporal, weather, spatial, and event intensity effects in a unified dataset.
 
+## Feature Engineering & Modeling Preparation
+
+Feature engineering and target definition were implemented to prepare the dataset for predictive modeling.
+
+This stage includes:
+
+- Definition of the imbalance prediction target
+- Net flow metric construction
+- Station-level filtering and preparation of the modeling dataset
+
+Notebook available in:
+
+`src/features/Modeling Preparation & Feature Engineering.ipynb`
 
 ## Team Members
 - Jesus Ricardo Vizcarra Vargas
