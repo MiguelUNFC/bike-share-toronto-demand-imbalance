@@ -197,8 +197,28 @@ Notebook available in:
 
 `src/features/Modeling Preparation & Feature Engineering.ipynb`
 
+## Initial Modeling
+
+This phase includes the initial benchmarking of multiple models:
+
+- Baseline (lag-based)
+- Linear Regression
+- Random Forest (arrivals/departures → derived net flow)
+- LightGBM (initial runs)
+- XGBoost (early validation)
+
+The objective was to compare performance (MAE, RMSE) and evaluate modeling strategies before transitioning to direct net flow prediction.
+
+This stage serves as a foundation for the final modeling approach.
+
+Notebook available in:
+
+`src/features/modeling/initial
+
+
 ## Team Members
 - Jesus Ricardo Vizcarra Vargas
+- Jose Miguel Osorio Davila
 - Liliana Marcela Camargo Mojica
 - Teddy Fabrizio Baeny Vargas
-- Jose Miguel Osorio Davila
+
