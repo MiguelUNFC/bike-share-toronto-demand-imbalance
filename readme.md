@@ -171,7 +171,7 @@ Bronze (Trip-level Parquet)
        ↓
 Silver (Clean Trips)
        ↓
-Silver\\\\\\\\\\\\\\\_Agg (Station Hour Flow)
+Silver\_Agg (Station Hour Flow)
        ↓
 Gold (Integrated Dataset)
 ```
@@ -193,7 +193,7 @@ To integrate:
 
 while preserving strict uniqueness at:
 
-`station\\\\\\\\\\\\\\\_id × year × month × day × hour`
+`station_id × year × month × day × hour`
 
 
 
@@ -227,7 +227,7 @@ Extends GOLD\_V1 by incorporating:
 Use case:
 Advanced imbalance prediction under localized demand shocks.
 
-> \\\\\\\\\\\\\\\*\\\\\\\\\\\\\\\*Recommended dataset for modeling:\\\\\\\\\\\\\\\*\\\\\\\\\\\\\\\* GOLD\\\\\\\\\\\\\\\_V2, as it captures temporal, weather, spatial, and event intensity effects in a unified dataset.
+> *Recommended dataset for modeling:* GOLD_V2, as it captures temporal, weather, spatial, and event intensity effects in a unified dataset.
 
 \---
 
@@ -260,7 +260,7 @@ This stage includes:
 
 Notebook available in:
 
-`src/features/Modeling Preparation \\\\\\\\\\\\\\\& Feature Engineering.ipynb`
+`src/features/Modeling Preparation & Feature Engineering.ipynb`
 
 \---
 
@@ -297,7 +297,7 @@ Notebook available in:
 
 This rolling strategy simulates real forecasting conditions and prevents data leakage.
 
-!\[23 Rolling Time-Based Training \& Testing Strategy](docs/images/fig\_rolling\_bar.png)
+![23 Rolling Time-Based Training & Testing Strategy](https://raw.githubusercontent.com/MiguelUNFC/bike-share-toronto-demand-imbalance/dev/docs/images/fig_rolling_bar.png)
 
 \---
 
@@ -305,7 +305,7 @@ This rolling strategy simulates real forecasting conditions and prevents data le
 
 The end-to-end pipeline integrates raw data ingestion, feature engineering, model scoring, and multi-channel output delivery across the Bronze → Silver → Gold → Modeling → Prediction → Consumption layers.
 
-!\[Predictive System for Station Imbalance](docs/images/fig\_pipeline.png)
+![Predictive System for Station Imbalance](https://raw.githubusercontent.com/MiguelUNFC/bike-share-toronto-demand-imbalance/dev/docs/images/fig_pipeline.png)
 
 \---
 
@@ -327,9 +327,9 @@ The \~30% improvement over the baseline is primarily driven by:
 
 \- Event-based localized demand shocks
 
-!\[MAE Improvements vs Naive Baseline (23 Rolling Iterations)](docs/images/fig\_mae\_improvement.png)
+![MAE Improvements vs Naive Baseline (23 Rolling Iterations)](https://raw.githubusercontent.com/MiguelUNFC/bike-share-toronto-demand-imbalance/dev/docs/images/fig_mae_improvement.png)
 
-!\[Rolling Backtesting Performance Across 23 Iterations MAE](docs/images/fig\_rolling\_backtest.png)
+![Rolling Backtesting Performance Across 23 Iterations MAE](https://raw.githubusercontent.com/MiguelUNFC/bike-share-toronto-demand-imbalance/dev/docs/images/fig_rolling_backtest.png)
 
 **Key findings:**
 
@@ -432,9 +432,9 @@ pip install -r requirements.txt
 |Preprocessing|`src/preprocessing/`|
 |Aggregation|`src/aggregation/`|
 |EDA|`reports/eda/EDA.ipynb`|
-|Feature engineering|`src/features/Modeling Preparation \\\\\\\\\\\\\\\& Feature Engineering.ipynb`|
+|Feature engineering|`src/features/Modeling Preparation & Feature Engineering.ipynb`|
 |Modeling|`src/modeling/`|
-|Financial analysis|`src/financial/Financial\\\\\\\\\\\\\\\_Analysis\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\_Simulation.ipynb`|
+|Financial analysis|`src/financial/Financial_Analysis_Simulation.ipynb`|
 
 ### 4\. View dashboards
 
